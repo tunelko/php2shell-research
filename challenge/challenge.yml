@@ -1,0 +1,13 @@
+name: PHP2Shell ASLR Bypass
+categories:
+  - pwn
+  - web
+difficulty: hard
+summary: >-
+  Exploit CVE-2026-109618/CVE-2026-109619 in an isolated Apache mod_php runtime,
+  recover the ASLR-dependent bases, and read /flag without disabling ASLR.
+flags:
+  - PHP2SHELL{ASLR_is_not_a_boundary}
+authors:
+  - Local lab inspired by public PHP2Shell research
+

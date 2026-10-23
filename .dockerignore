@@ -1,0 +1,11 @@
+# Keep the platform build context minimal.
+**
+!challenge/platform/
+!challenge/platform/**
+!solver/
+!solver/solve_remote.py
+!solver/bootstrap_upstream.py
+!solver/request_display_patch.py
+!solver/profiles/
+!solver/profiles/**
+!solver/PLAYER.md

@@ -1,0 +1,47 @@
+services:
+  platform:
+    build:
+      context: ../..
+      dockerfile: challenge/platform/Dockerfile
+    image: php2shell-aslr-platform:1.0
+    container_name: php2shell-platform
+    restart: unless-stopped
+    environment:
+      PUBLIC_TARGET_ORIGIN: "${PUBLIC_TARGET_ORIGIN:-http://127.0.0.1:8426}"
+      INTERNAL_VULNERABLE_URL: "http://vulnerable/version.php"
+      INTERNAL_PATCHED_URL: "http://patched/version.php"
+    ports:
+      - "${PLATFORM_BIND:-127.0.0.1}:8080:80"
+    depends_on:
+      - vulnerable
+      - patched
+
+  vulnerable:
+    build:
+      context: ../lab
+      args:
+        BASE_IMAGE: "php:8.4.26-apache@sha256:60111400ff77bdc44fa79b4f072afe49a42abba71e0846ad496be4761dc9c11a"
+        PHP_VERSION: "8.4.26"
+        ROLE: "vulnerable"
+    image: php2shell-aslr:8.4.26
+    container_name: php2shell-vulnerable
+    restart: unless-stopped
+    ports:
+      - "${CHALLENGE_BIND:-127.0.0.1}:8426:80"
+    volumes:
+      - ../../runtime/out:/out
+
+  patched:
+    build:
+      context: ../lab
+      args:
+        BASE_IMAGE: "php:8.4.27-apache@sha256:a0b75cee7023ba2c127138dcad2ecc6ec7e09435534645e70450f29f24ea2a5a"
+        PHP_VERSION: "8.4.27"
+        ROLE: "patched"
+    image: php2shell-aslr:8.4.27
+    container_name: php2shell-patched
+    restart: unless-stopped
+    ports:
+      - "${PATCHED_BIND:-127.0.0.1}:8427:80"
+    volumes:
+      - ../../runtime/out:/out

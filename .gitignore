@@ -1,0 +1,6 @@
+runtime/
+solver/vendor/
+__pycache__/
+*.py[cod]
+.env
+.phpunit.result.cache
