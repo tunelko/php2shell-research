@@ -28,3 +28,10 @@ upstream source nor a modified fork of it is redistributed.
 Profiles are selected only when `verified` and `rce` are both true. Offsets and
 heap geometry are tied to exact PHP version, architecture, distribution and
 image build.
+
+## Upstream attribution
+
+The original public exploit primitive is by **9bie and contributors** from
+`https://github.com/9bie/php2shell-bypass-aslr-exp`. This directory only
+contains a bootstrap and wrapper; the upstream source is fetched at runtime and
+is not redistributed. See [`../ACKNOWLEDGEMENTS.md`](../ACKNOWLEDGEMENTS.md).

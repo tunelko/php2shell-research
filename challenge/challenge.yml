@@ -9,5 +9,6 @@ summary: >-
 flags:
   - PHP2SHELL{ASLR_is_not_a_boundary}
 authors:
-  - Local lab inspired by public PHP2Shell research
+  - tunelko (laboratory, wrapper, profiles, and tooling)
+  - 9bie and contributors (original public ASLR exploit primitive)
 

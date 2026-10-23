@@ -196,6 +196,7 @@ Full documentation:
 - [Research tooling](docs/research-tooling.md)
 - [Request dumps](docs/request-dumps.md)
 - [Runtime upstream changes](docs/upstream-changes.md)
+- [Credits and attribution](ACKNOWLEDGEMENTS.md)
 
 ## Project layout
 
@@ -241,7 +242,12 @@ python3 -m unittest discover -s tests -v
 ./research/matrix_runner.py --set full --dry-run
 ```
 
-## License
+## Credits and license
+
+The original public exploit primitive is by **9bie and contributors** and is
+fetched at runtime from `9bie/php2shell-bypass-aslr-exp`; it is not vendored or
+redistributed here. Vulnerability reporters and PHP remediation developers are
+listed in [`ACKNOWLEDGEMENTS.md`](ACKNOWLEDGEMENTS.md).
 
 Original material in this repository is under the MIT license. The runtime
 fetched upstream exploit remains governed by its repository terms and is not

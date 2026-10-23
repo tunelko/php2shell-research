@@ -1,6 +1,7 @@
 # Runtime changes applied to the public exploit
 
-The core primitive remains the public repository:
+The core primitive remains the public repository created by **9bie and
+contributors**:
 
 ```text
 https://github.com/9bie/php2shell-bypass-aslr-exp

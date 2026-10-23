@@ -2,5 +2,13 @@
   "source": "https://github.com/9bie/php2shell-bypass-aslr-exp",
   "commit": "4586f5cc120c82fd468b17469202bac629810ad9",
   "profile": "bookworm",
-  "scope": "local-lab-only"
+  "scope": "local-lab-only",
+  "attribution": {
+    "authors": [
+      "9bie and contributors"
+    ],
+    "repository": "https://github.com/9bie/php2shell-bypass-aslr-exp",
+    "role": "original public ASLR-bypass exploit primitive",
+    "redistributed": false
+  }
 }
