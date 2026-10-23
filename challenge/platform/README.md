@@ -1,31 +1,32 @@
 # PHP2Shell challenge platform
 
-This container is a PHP/Apache distribution and monitoring surface for the
+This service is a PHP/Apache distribution and monitoring surface for the local
 challenge. It runs patched PHP 8.4.27; the intentionally vulnerable PHP 8.4.26
 runtime is the separate `vulnerable` service. It does not mount the Docker
 socket.
 
-It provides:
+Endpoints:
 
-- an English landing page;
-- challenge metadata at `/api/challenge`;
-- live vulnerable/patched fingerprints at `/api/status`;
-- a Docker-free player bundle at `/download/player-bundle.tar.gz`;
-- a health endpoint at `/healthz`.
+```text
+/                           landing page
+/healthz                    service health
+/api/challenge              challenge metadata
+/api/status                 vulnerable/patched fingerprints
+/download/player-bundle.tar.gz
+```
 
 The player bundle contains:
 
 ```text
 solve_remote.py
 bootstrap_upstream.py
+request_display_patch.py
+profiles/
 README.md
 ```
 
-The platform front controller is `challenge/challenge/platform/public/index.php`.
+The bundled `README.md` is the player-facing `solver/PLAYER.md` document. The
+exploit core is not vendored; `bootstrap_upstream.py` fetches and checks out the
+pinned public research commit when the player runs the solver.
 
-`README.md` is the player-facing `exploit/PLAYER.md` document, not the larger
-organizer guide.
-
-The exploit core is not vendored. `bootstrap_upstream.py` fetches and checks out
-the pinned public research commit when the player runs the solver.
-
+Build through `challenge/compose/platform.yml` from the repository root.
